@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--
+  LUCY CLICKS — Amazon Affiliate Site
+  ------------------------------------------------------------
+  BEFORE YOU PUBLISH, DO THESE THREE THINGS:
+
+  1) REPLACE THE AFFILIATE TAG
+     Every product button links to an Amazon search URL ending in
+     &tag=YOURTAG-20. Swap YOURTAG-20 for your real Amazon Associates
+     tracking ID everywhere (search this file for "YOURTAG-20").
+
+  2) SWAP SEARCH LINKS FOR REAL PRODUCT LINKS
+     The buttons currently point to Amazon search-results pages so the
+     site works the moment you publish it. Once you've picked the exact
+     items Lucy recommends, replace each href with the specific
+     product's Amazon link (with your tag attached) for higher conversion.
+
+  3) ADD REAL PHOTOS OF LUCY
+     The hero and "Meet Lucy" section use a hand-drawn SVG corgi so the
+     site works with zero assets. Swap in real photos of Lucy where
+     marked "REPLACE WITH PHOTO" for a more personal, trustworthy feel.
+
+  Also required by Amazon's Associates Program: keep the disclosure
+  text in the footer intact and visible on every page that contains
+  affiliate links.
+  ------------------------------------------------------------
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucy Clicks — Sniffed & Approved by Lucy the Corgi</title>
+<meta name="description" content="A corgi's honest picks for the best dog gear on Amazon, tested paw-first by Lucy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;1,18..144,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF3E7;
+    --cream-2:#F5E9D8;
+    --corgi:#C97A3D;
+    --corgi-deep:#A85F2A;
+    --umber:#3B2A1E;
+    --umber-soft:#6b5643;
+    --moss:#6B7A5E;
+    --moss-deep:#54614A;
+    --blush:#E8ADA0;
+    --white:#FFFFFF;
+    --line: rgba(59,42,30,0.14);
+    --radius: 22px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--umber);
+    font-family:'Literata', Georgia, serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3, .display{
+    font-family:'Fredoka', sans-serif;
+    color:var(--umber);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:0.02em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* subtle grass-blade texture used as a background wash */
+  .grass-bg{
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(107,122,94,0.06) 0, transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(201,122,61,0.07) 0, transparent 45%);
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,243,231,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-size:22px; font-weight:600; color:var(--umber);
+    text-decoration:none;
+  }
+  .logo .mark{
+    width:36px; height:36px; flex:none;
+  }
+  nav.links{display:flex; gap:28px; font-family:'Fredoka',sans-serif; font-size:15px; font-weight:500;}
+  nav.links a{text-decoration:none; color:var(--umber-soft); transition:color .15s ease;}
+  nav.links a:hover{color:var(--corgi-deep);}
+  .nav-cta{
+    display:none;
+  }
+  @media(min-width:720px){
+    .nav-cta{
+      display:inline-flex;
+      background:var(--corgi);
+      color:var(--white);
+      font-family:'Fredoka',sans-serif;
+      font-weight:600;
+      font-size:14px;
+      padding:10px 18px;
+      border-radius:100px;
+      text-decoration:none;
+      box-shadow:0 6px 16px rgba(201,122,61,0.35);
+    }
+  }
+  @media(max-width:719px){
+    nav.links{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:36px;
+    align-items:center;
+  }
+  @media(min-width:860px){
+    .hero-grid{grid-template-columns:1.05fr 0.95fr; gap:24px;}
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.09em;
+    color:var(--moss-deep);
+    background:rgba(107,122,94,0.12);
+    padding:7px 14px;
+    border-radius:100px;
+    margin-bottom:20px;
+  }
+  .eyebrow .paw{width:14px;height:14px;}
+  .hero h1{
+    font-size:clamp(36px, 5.6vw, 58px);
+    line-height:1.03;
+    font-weight:700;
+  }
+  .hero h1 span{color:var(--corgi);}
+  .hero p.lede{
+    font-family:'Literata', serif;
+    font-size:19px;
+    color:var(--umber-soft);
+    max-width:46ch;
+    margin-top:18px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;}
+  .btn{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    padding:14px 24px;
+    border-radius:100px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:2px solid transparent;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--corgi); color:var(--white);
+    box-shadow:0 10px 24px rgba(201,122,61,0.32);
+  }
+  .btn-ghost{
+    background:transparent;
+    border-color:var(--umber);
+    color:var(--umber);
+  }
+
+  .hero-illustration{
+    position:relative;
+    display:flex; justify-content:center;
+  }
+  .hero-illustration svg{width:100%; max-width:420px; height:auto;}
+  .bubble{
+    position:absolute;
+    top:2%;
+    right:6%;
+    background:var(--white);
+    border:2px solid var(--umber);
+    border-radius:18px;
+    padding:10px 16px;
+    font-family:'Fredoka',sans-serif;
+    font-weight:600;
+    font-size:14px;
+    transform:rotate(-3deg);
+    box-shadow:4px 4px 0 var(--umber);
+  }
+  @media(max-width:859px){ .bubble{display:none;} }
+
+  /* ---------- PAW TRAIL DIVIDER ---------- */
+  .paw-trail{
+    display:flex; justify-content:center; gap:34px;
+    padding:6px 0 8px;
+    opacity:0.55;
+  }
+  .paw-trail svg{width:20px;height:20px;}
+  .paw-trail svg:nth-child(2n){transform:translateY(10px) rotate(8deg);}
+  .paw-trail svg:nth-child(3n){transform:translateY(-4px) rotate(-6deg);}
+
+  /* ---------- MEET LUCY ---------- */
+  .meet{
+    padding:50px 0 70px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  @media(min-width:800px){
+    .meet{grid-template-columns:220px 1fr; align-items:center;}
+  }
+  .meet-photo{
+    width:180px; height:180px; border-radius:50%;
+    background:var(--cream-2);
+    border:3px solid var(--umber);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto;
+    overflow:hidden;
+  }
+  .meet-photo svg{width:78%;}
+  .meet h2{font-size:26px; margin-bottom:10px;}
+  .meet p{color:var(--umber-soft); max-width:64ch;}
+  .badge-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;}
+  .badge{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px; font-weight:700;
+    background:var(--white);
+    border:1.5px solid var(--umber);
+    padding:6px 12px;
+    border-radius:100px;
+  }
+
+  /* ---------- CATEGORY CHIPS ---------- */
+  .cat-nav{
+    padding:6px 0 30px;
+    display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .chip{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:14px;
+    background:var(--white);
+    border:2px solid var(--line);
+    padding:9px 18px;
+    border-radius:100px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .chip:hover{border-color:var(--corgi);}
+  .chip.active{
+    background:var(--umber); color:var(--cream); border-color:var(--umber);
+  }
+
+  /* ---------- PRODUCT GRID ---------- */
+  .section-head{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    gap:20px; margin-bottom:28px; flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(26px,3.4vw,36px);}
+  .section-head p{color:var(--umber-soft); margin-top:6px; max-width:56ch;}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+    gap:22px;
+    padding-bottom:70px;
+  }
+  .card{
+    background:var(--white);
+    border-radius:var(--radius);
+    padding:22px;
+    border:1.5px solid var(--line);
+    display:flex; flex-direction:column;
+    gap:12px;
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .card.in{opacity:1; transform:translateY(0);}
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px;}
+  .card-cat{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--moss-deep);
+  }
+  .card h3{font-size:19px; line-height:1.25;}
+  .paws{display:flex; gap:3px;}
+  .paws svg{width:16px;height:16px;}
+  .paws svg.filled path{fill:var(--corgi);}
+  .paws svg.empty path{fill:none; stroke:var(--umber); stroke-opacity:0.35; stroke-width:6;}
+  .card p.take{color:var(--umber-soft); font-size:15.5px; flex:1;}
+  .card p.take .lucy-says{font-weight:600; color:var(--umber); font-family:'Fredoka',sans-serif; font-size:13.5px; display:block; margin-bottom:4px;}
+  .card-foot{display:flex; align-items:center; justify-content:space-between; margin-top:4px; gap:10px;}
+  .price-tag{font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; color:var(--umber-soft);}
+  .shop-btn{
+    font-family:'Fredoka',sans-serif; font-weight:600; font-size:14px;
+    background:var(--corgi-deep); color:var(--white);
+    padding:10px 18px; border-radius:100px; text-decoration:none;
+    white-space:nowrap;
+    display:inline-flex; align-items:center; gap:6px;
+    transition:transform .15s ease;
+  }
+  .shop-btn:hover{transform:translateY(-2px);}
+
+  /* ---------- DISCLOSURE / FOOTER ---------- */
+  .disclosure{
+    background:var(--umber);
+    color:var(--cream);
+    padding:50px 0 30px;
+  }
+  .disclosure .wrap{display:grid; gap:30px; grid-template-columns:1fr; }
+  @media(min-width:800px){ .disclosure .wrap{grid-template-columns:1.3fr 1fr;} }
+  .disclosure h3{color:var(--cream); font-size:18px; margin-bottom:10px;}
+  .disclosure p{color:rgba(251,243,231,0.72); font-size:14.5px;}
+  .disclosure .cols{display:flex; gap:60px; flex-wrap:wrap;}
+  .disclosure .cols div{display:flex; flex-direction:column; gap:8px;}
+  .disclosure a{color:var(--cream); text-decoration:underline; text-decoration-color:rgba(251,243,231,0.4); font-size:14.5px;}
+  .fine{
+    border-top:1px solid rgba(251,243,231,0.15);
+    margin-top:34px; padding-top:20px;
+    font-size:12.5px; color:rgba(251,243,231,0.55);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .card{transition:none; opacity:1; transform:none;}
+  }
+</style>
+</head>
+<body class="grass-bg">
+
+<header>
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="24" fill="#C97A3D"/>
+        <path d="M14 20c0-2 1.5-6 3-7s2 2 2 4" stroke="#FBF3E7" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M34 20c0-2-1.5-6-3-7s-2 2-2 4" stroke="#FBF3E7" stroke-width="2.4" stroke-linecap="round"/>
+        <ellipse cx="24" cy="27" rx="10" ry="8.5" fill="#FBF3E7"/>
+        <circle cx="20.5" cy="25.5" r="1.6" fill="#3B2A1E"/>
+        <circle cx="27.5" cy="25.5" r="1.6" fill="#3B2A1E"/>
+        <ellipse cx="24" cy="29.5" rx="2.2" ry="1.6" fill="#3B2A1E"/>
+      </svg>
+      Lucy Clicks
+    </a>
+    <nav class="links">
+      <a href="#meet">Meet Lucy</a>
+      <a href="#picks">Lucy's Picks</a>
+      <a href="#disclosure">Disclosure</a>
+    </nav>
+    <a href="#picks" class="nav-cta">See her picks</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">
+        <svg class="paw" viewBox="0 0 24 24" fill="#54614A"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+        Sniffed &amp; approved by a real corgi
+      </div>
+      <h1>Lucy tests it.<br>Lucy <span>rates</span> it.<br>You skip the guessing.</h1>
+      <p class="lede">I'm Lucy — a Pembroke Welsh Corgi with strong opinions about beds, stubby-leg-friendly toys, and which chews actually last longer than four minutes. These are the Amazon products I've personally put my paws on and would beg for again.</p>
+      <div class="hero-ctas">
+        <a href="#picks" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+          See Lucy's picks
+        </a>
+        <a href="#meet" class="btn btn-ghost">Meet Lucy</a>
+      </div>
+    </div>
+
+    <div class="hero-illustration">
+      <div class="bubble">these paws don't lie 🐾</div>
+      <!-- SIGNATURE ELEMENT: hand-drawn corgi mascot, replace with a real photo of Lucy if you'd like -->
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="205" cy="345" rx="120" ry="16" fill="#3B2A1E" opacity="0.08"/>
+        <!-- tail -->
+        <ellipse cx="330" cy="245" rx="20" ry="24" fill="#FBF3E7" stroke="#3B2A1E" stroke-width="4"/>
+        <!-- back legs -->
+        <rect x="255" y="290" width="26" height="46" rx="12" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4"/>
+        <rect x="120" y="290" width="26" height="46" rx="12" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4"/>
+        <!-- body -->
+        <ellipse cx="200" cy="255" rx="115" ry="80" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4"/>
+        <ellipse cx="205" cy="285" rx="70" ry="45" fill="#FBF3E7" stroke="#3B2A1E" stroke-width="4"/>
+        <!-- front legs -->
+        <rect x="245" y="300" width="26" height="50" rx="12" fill="#FBF3E7" stroke="#3B2A1E" stroke-width="4"/>
+        <rect x="130" y="300" width="26" height="50" rx="12" fill="#FBF3E7" stroke="#3B2A1E" stroke-width="4"/>
+        <!-- head -->
+        <g>
+          <path d="M115 150 L95 90 L150 125 Z" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M115 150 L100 105 L140 128 Z" fill="#FBF3E7"/>
+          <path d="M255 150 L275 90 L220 125 Z" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M255 150 L270 105 L230 128 Z" fill="#FBF3E7"/>
+          <ellipse cx="185" cy="175" rx="80" ry="68" fill="#C97A3D" stroke="#3B2A1E" stroke-width="4"/>
+          <path d="M150 185 Q185 235 220 185 Q225 225 185 235 Q145 225 150 185 Z" fill="#FBF3E7" stroke="#3B2A1E" stroke-width="4"/>
+          <circle cx="155" cy="170" r="7" fill="#3B2A1E"/>
+          <circle cx="215" cy="170" r="7" fill="#3B2A1E"/>
+          <ellipse cx="185" cy="200" rx="10" ry="7" fill="#3B2A1E"/>
+          <path d="M175 208 Q185 216 195 208" stroke="#3B2A1E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="paw-trail" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="#6B7A5E"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+    <svg viewBox="0 0 24 24" fill="#6B7A5E"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+    <svg viewBox="0 0 24 24" fill="#6B7A5E"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+    <svg viewBox="0 0 24 24" fill="#6B7A5E"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+    <svg viewBox="0 0 24 24" fill="#6B7A5E"><circle cx="12" cy="15" r="5"/><circle cx="4" cy="9" r="2.4"/><circle cx="9" cy="4.5" r="2.4"/><circle cx="15" cy="4.5" r="2.4"/><circle cx="20" cy="9" r="2.4"/></svg>
+  </div>
+</section>
+
+<section class="wrap meet" id="meet">
+  <!-- REPLACE WITH PHOTO: swap this SVG circle for an <img> of the real Lucy -->
+  <div class="meet-photo">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="100" cy="95" rx="78" ry="66" fill="#C97A3D"/>
+      <path d="M148 92 Q100 138 52 92 Q56 128 100 136 Q144 128 148 92 Z" fill="#FBF3E7"/>
+      <circle cx="75" cy="88" r="7" fill="#3B2A1E"/>
+      <circle cx="125" cy="88" r="7" fill="#3B2A1E"/>
+      <ellipse cx="100" cy="108" rx="9" ry="6.5" fill="#3B2A1E"/>
+      <path d="M58 60 L44 22 L88 52 Z" fill="#C97A3D"/>
+      <path d="M142 60 L156 22 L112 52 Z" fill="#C97A3D"/>
+    </svg>
+  </div>
+  <div>
+    <h2>Meet Lucy</h2>
+    <p>Lucy is a Pembroke Welsh Corgi with an unreasonably good sense of smell, a strong opinion about squeaky toys, and roughly four minutes of patience for anything she doesn't already love. Every product on this page has passed the only test that matters to her: would she trot over, sniff it, and actually use it again tomorrow.</p>
+    <div class="badge-row">
+      <span class="badge">BREED: PEMBROKE WELSH CORGI</span>
+      <span class="badge">FAVORITE WORD: "WALK"</span>
+      <span class="badge">TESTED PRODUCTS: 40+</span>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="picks">
+  <div class="section-head">
+    <div>
+      <h2>Lucy's picks</h2>
+      <p>Sorted by category, rated in paws out of five. Every button below takes you straight to Amazon.</p>
+    </div>
+  </div>
+
+  <div class="cat-nav" role="tablist" aria-label="Filter product categories">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="beds">Beds &amp; Comfort</button>
+    <button class="chip" data-filter="toys">Toys</button>
+    <button class="chip" data-filter="chews">Chews &amp; Treats</button>
+    <button class="chip" data-filter="grooming">Grooming</button>
+    <button class="chip" data-filter="gear">Walk &amp; Travel Gear</button>
+    <button class="chip" data-filter="tech">Smart Gadgets</button>
+  </div>
+
+  <div class="grid" id="product-grid">
+    <!-- Each card: replace the href search-link with a specific product link once chosen, and swap YOURTAG-20 for your Associates ID -->
+
+    <div class="card" data-cat="beds">
+      <div class="card-top">
+        <span class="card-cat">Beds &amp; Comfort</span>
+        <div class="paws" aria-label="5 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Orthopedic Memory Foam Dog Bed</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>Short legs mean my hips do a lot of work. This one doesn't flatten after a week like the last bed did, and it holds its shape through a full nap cycle.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=orthopedic+memory+foam+dog+bed&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="toys">
+      <div class="card-top">
+        <span class="card-cat">Toys</span>
+        <div class="paws" aria-label="5 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>KONG Classic Stuffable Toy</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>Freeze it with a little peanut butter inside and this buys my humans twenty full minutes of quiet. It's the only toy I haven't destroyed.</p>
+      <div class="card-foot">
+        <span class="price-tag">$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=kong+classic+dog+toy&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="toys">
+      <div class="card-top">
+        <span class="card-cat">Toys</span>
+        <div class="paws" aria-label="4 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Outward Hound Puzzle Feeder Toy</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>This one makes me work for my treats, which I resent and respect in equal measure. Great for rainy days when zoomies aren't an option.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=outward+hound+puzzle+dog+toy&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="chews">
+      <div class="card-top">
+        <span class="card-cat">Chews &amp; Treats</span>
+        <div class="paws" aria-label="5 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Long-Lasting Dental Chews</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>My humans like that my breath doesn't clear a room anymore. I like that it takes real effort to finish one. Everybody wins.</p>
+      <div class="card-foot">
+        <span class="price-tag">$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=dog+dental+chews&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="chews">
+      <div class="card-top">
+        <span class="card-cat">Chews &amp; Treats</span>
+        <div class="paws" aria-label="4 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Slow Feeder Bowl</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>I used to inhale dinner in nine seconds flat. This bowl has ridges that slow me down, which my stomach is quietly grateful for.</p>
+      <div class="card-foot">
+        <span class="price-tag">$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=slow+feeder+dog+bowl&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="grooming">
+      <div class="card-top">
+        <span class="card-cat">Grooming</span>
+        <div class="paws" aria-label="5 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Undercoat Deshedding Tool</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>Corgis blow their coat twice a year like it's a competitive sport. This tool is the only thing that's kept my humans' couch from turning orange.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=dog+deshedding+tool&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="gear">
+      <div class="card-top">
+        <span class="card-cat">Walk &amp; Travel Gear</span>
+        <div class="paws" aria-label="5 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>No-Pull Front-Clip Harness</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>Built for a long body and short legs like mine — it doesn't ride up under my front legs the way strap harnesses do when I get excited about a squirrel.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=no+pull+dog+harness&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="gear">
+      <div class="card-top">
+        <span class="card-cat">Walk &amp; Travel Gear</span>
+        <div class="paws" aria-label="4 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Car Seat Cover &amp; Hammock</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>Keeps my fur off the seats on the way to the beach, and the raised sides mean I can't slide into the footwell on sharp turns.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=dog+car+seat+cover+hammock&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+    <div class="card" data-cat="tech">
+      <div class="card-top">
+        <span class="card-cat">Smart Gadgets</span>
+        <div class="paws" aria-label="4 out of 5 paws">
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><path d="M12 13a5 5 0 015 5 3 3 0 01-3 3H10a3 3 0 01-3-5 5 5 0 015-3zM4 9a2.4 2.4 0 110-4.8A2.4 2.4 0 014 9zm7-4.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8zm9 4.5a2.4 2.4 0 110-4.8A2.4 2.4 0 0120 9zm-6.5-.5a2.4 2.4 0 110-4.8 2.4 2.4 0 010 4.8z"/></svg>
+        </div>
+      </div>
+      <h3>Treat-Tossing Pet Camera</h3>
+      <p class="take"><span class="lucy-says">Lucy says:</span>My humans check on me from work and the treat-toss feature means I forgive them for leaving in the first place. Mostly.</p>
+      <div class="card-foot">
+        <span class="price-tag">$$$</span>
+        <a class="shop-btn" href="https://www.amazon.com/s?k=treat+tossing+pet+camera&tag=YOURTAG-20" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="disclosure" id="disclosure">
+  <div class="wrap">
+    <div>
+      <h3>Affiliate disclosure</h3>
+      <p>Lucy Clicks is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you. Product opinions are Lucy's own (with some help typing).</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3 style="font-size:15px;">Explore</h3>
+        <a href="#top">Home</a>
+        <a href="#meet">Meet Lucy</a>
+        <a href="#picks">Lucy's Picks</a>
+      </div>
+      <div>
+        <h3 style="font-size:15px;">Categories</h3>
+        <a href="#picks">Beds &amp; Comfort</a>
+        <a href="#picks">Toys</a>
+        <a href="#picks">Chews &amp; Treats</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap fine">
+    <span>© <span id="year"></span> Lucy Clicks. All paw prints reserved.</span>
+    <span>lucyclicks.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // category filter
+  const chips = document.querySelectorAll('.chip');
+  const cards = document.querySelectorAll('#product-grid .card');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.cat === filter;
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // scroll-in reveal for cards
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  cards.forEach(card => io.observe(card));
+</script>
+
+</body>
+</html>
